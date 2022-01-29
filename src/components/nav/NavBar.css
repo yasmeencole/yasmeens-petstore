@@ -1,10 +1,18 @@
-.navbar {
+.navbar, darkNavBar {
     display: flex;
     flex-wrap: nowrap;
     justify-content: left;
+    background-color: #FF9C63;
+    padding: 10px;
+    height: 70px;
+    font-weight: bold;
 }
 
 .navbar__item {
     flex-basis: 20%;
     list-style-type: none;
+}
+
+.nav__links {
+    font-size: 16px;
 }

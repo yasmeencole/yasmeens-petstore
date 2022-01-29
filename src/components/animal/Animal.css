@@ -1,12 +1,43 @@
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+
 .animals {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    text-align: center;
+    text-decoration: none !important;
+    font-family: "Patua One", serif;
+    border-radius: 0px !important;
+
 }
 
 .animal {
     flex-basis: 28%;
     margin: 1em;
     padding: 1em;
-    border: 1px solid goldenrod;
+    margin-left: 4px;
+    border: none !important;
+    border-radius: 0px !important;
+
+}
+
+.animalCardTitle {
+    color: #404040;
+}
+
+.cardLink {
+    text-decoration: none !important;
+
+}
+
+.card-img {
+    border-radius: 0px !important;
+
+}
+
+.animalCard {
+    border-radius: 0px !important;
+    border: none !important;
+    margin-left: 2px;
+    margin-top: 15px;
 }

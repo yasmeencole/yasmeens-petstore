@@ -1,10 +1,16 @@
 import React, { useContext, useEffect } from "react"
 import { AnimalContext } from "./AnimalProvider"
 import { Animal } from "./Animal"
+import { useHistory } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+
+
 
 export const AnimalList = (props) => {
   // This state changes when `getPets()` is invoked below
     const { animals, getAnimals } = useContext(AnimalContext)
+    const history = useHistory()
+
 
     //useEffect - reach out to the world for something
     useEffect(() => {
@@ -18,29 +24,10 @@ export const AnimalList = (props) => {
             <header className="animals__header">
                 <h1>Animals</h1>
             </header>
-            {/* <div className="pets">
-                {
-                pets.map(pet => {
-                    console.log({pets})
-                    return (
-                    <div className="pet" id={`pet--${pet.id}`}>
-                        <div className="pet__name">
-                        Name: { pet.name }
-                        </div>
-                        <div className="pet__breed">
-                        Breed: { pet.breed }
-                        </div>
-                    </div>
-                    )
-                })
-            }
-            </div> */}
         <div className="animal_list">
-            {/* <h1>My Animals</h1>
+            <h1>My Animals</h1>
 
-            <button onClick={() => history.push("/animals/create")}>
-                Add Animal
-            </button> */}
+            <Button className="createAnimalButtom" onClick={() => history.push("/animals/create")}>New Animal</Button>
 
             <div className="animals">
                 {animals.map(animal => {
