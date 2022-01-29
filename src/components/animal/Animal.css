@@ -21,7 +21,7 @@
 
 }
 
-.animalCardTitle {
+.animalCardTitle, .card-text {
     color: #404040;
 }
 
@@ -30,7 +30,7 @@
 
 }
 
-.card-img {
+.card-img, .card-img-top {
     border-radius: 0px !important;
 
 }
@@ -40,4 +40,17 @@
     border: none !important;
     margin-left: 2px;
     margin-top: 15px;
+}
+
+.animalEditButton, .animalDeleteButton {
+    background-color: #4E8B96;
+    border: none;
+    margin-right: 15px;
+    align-items: center;
+}
+
+.createAnimalButtom {
+    background-color: #4E8B96;
+    border: none;
+
 }
