@@ -56,6 +56,9 @@ export const AnimalDetail = () => {
                 Type: {animal.type}
                 <br />
                 <br />
+                Breed: {animal.breed}
+                <br />
+                <br />
                 Status: {animal.status}
                 <br />
                 <br />

@@ -21,11 +21,11 @@ export const AnimalList = (props) => {
 
     return (
         <>
-            <header className="animals__header">
+            {/* <header className="animals__header">
                 <h1>Animals</h1>
-            </header>
+            </header> */}
         <div className="animal_list">
-            <h1>My Animals</h1>
+            <h1>The Petstore's Animals</h1>
 
             <Button className="createAnimalButtom" onClick={() => history.push("/animals/create")}>New Animal</Button>
 

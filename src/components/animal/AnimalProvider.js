@@ -8,7 +8,7 @@ export const AnimalProvider = (props) => {
     const [animals, setAnimals] = useState([])
 
     const getAnimals = () => {
-        return fetch("http://localhost:8088/animals")
+        return fetch("https://petstore.swagger.io/v2/pet")
         .then(response => response.json())
         .then(setAnimals)
     }
@@ -29,14 +29,14 @@ export const AnimalProvider = (props) => {
             .then(response => response.json())
     }
 
-    const deleteAnimals = animalId => {
+    const deleteAnimal = animalId => {
         return fetch(`http://localhost:8088/animals/${animalId}`, {
             method: "DELETE"
         })
         .then(getAnimals)
     }
 
-    const updateAnimals = animal => {
+    const updateAnimal = animal => {
         return fetch(`http://localhost:8088/animals/${animal.id}`, {
             method: "PUT",
             headers: {
@@ -55,7 +55,7 @@ export const AnimalProvider = (props) => {
     */
     return (
         <AnimalContext.Provider value={{
-            animals, getAnimals, createAnimal, getAnimalById, deleteAnimals, updateAnimals
+            animals, getAnimals, createAnimal, getAnimalById, deleteAnimal, updateAnimal
         }}>
             {props.children}
         </AnimalContext.Provider>

@@ -1,28 +1,28 @@
 {
-    "animals": [
-        { 
-            "id": 1, 
-            "name": "Maya", 
-            "url": "https://images.unsplash.com/photo-1605244863941-3a3ed921c60d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cG9vZGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
-            "type": "Dog",
-            "status": "Available",
-            "breed": "Poodle"
-        },
-        { 
-            "id": 2, 
-            "name": "LuLu", 
-            "url": "https://media.istockphoto.com/photos/purebred-german-shepherd-puppy-lies-on-the-sidewalk-against-a-wooden-picture-id1358309706?b=1&k=20&m=1358309706&s=170667a&w=0&h=Od8h2xqYTRzjokH8ys8mgrAv_ueMbLbHPvFKdNiqDYM=",
-            "type": "Dog",
-            "status": "Available",
-            "breed": "German Shepherd" 
-        },
-        { 
-            "id": 3, 
-            "name": "Evan", 
-            "url": "https://images.unsplash.com/photo-1535909339361-ef56e179d637?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHVnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
-            "type": "Dog",
-            "status": "Available",
-            "breed": "Pug" 
-        }
-    ]
+  "animals": [
+    {
+      "id": 1,
+      "name": "Maya",
+      "url": "https://images.unsplash.com/photo-1605244863941-3a3ed921c60d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cG9vZGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
+      "type": "Dog",
+      "status": "Available",
+      "breed": "Poodle"
+    },
+    {
+      "id": 2,
+      "name": "LuLu",
+      "url": "https://media.istockphoto.com/photos/purebred-german-shepherd-puppy-lies-on-the-sidewalk-against-a-wooden-picture-id1358309706?b=1&k=20&m=1358309706&s=170667a&w=0&h=Od8h2xqYTRzjokH8ys8mgrAv_ueMbLbHPvFKdNiqDYM=",
+      "type": "Dog",
+      "status": "Available",
+      "breed": "German Shepherd"
+    },
+    {
+      "id": 3,
+      "name": "Evan",
+      "url": "https://images.unsplash.com/photo-1535909339361-ef56e179d637?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHVnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
+      "type": "Dog",
+      "status": "Available",
+      "breed": "Pug"
+    }
+  ]
 }

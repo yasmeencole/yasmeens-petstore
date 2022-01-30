@@ -1,13 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
 
-.animals {
+.animals, .card-img {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     text-align: center;
     text-decoration: none !important;
     font-family: "Patua One", serif;
     border-radius: 0px !important;
+    max-height: 200px !important;
+    min-height: 200px;
+    min-width: 18rem;
 
 }
 
@@ -42,7 +45,7 @@
     margin-top: 15px;
 }
 
-.animalEditButton, .animalDeleteButton {
+.animalEditButton, .animalDeleteButton, .btn, .btn-primary {
     background-color: #4E8B96;
     border: none;
     margin-right: 15px;
@@ -53,4 +56,12 @@
     background-color: #4E8B96;
     border: none;
 
+}
+
+/* .animalForm {
+    background-color: #FAFCBD;
+} */
+
+body {
+    /* background-color: #4E8B96; */
 }

@@ -23,6 +23,7 @@ export const AnimalForm = () => {
         name: "",
         url: "",
         type: "",
+        breed: "",
         status: ""
     });
 
@@ -81,6 +82,7 @@ existing record of an review.
                 name: animal.name,
                 url: animal.url,
                 type: animal.type,
+                breed: animal.breed,
                 status: animal.status
             })
 
@@ -93,6 +95,7 @@ existing record of an review.
                 name: animal.name,
                 url: animal.url,
                 type: animal.type,
+                breed: animal.breed,
                 status: animal.status
             })
 
@@ -169,6 +172,12 @@ existing record of an review.
                 <div className="animal__type">
                     <label htmlFor="type">Type:</label>
                     <input type="text" id="type" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Type of Animal" value={animal.type}/>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="animal__breed">
+                    <label htmlFor="breed">Breed:</label>
+                    <input type="text" id="breed" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Animal Breed" value={animal.breed}/>
                 </div>
             </fieldset>
             <fieldset>
