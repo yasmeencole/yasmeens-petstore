@@ -1,20 +1,27 @@
 import React, { useContext, useEffect, useState } from "react"
 import { AnimalContext } from "./AnimalProvider"
+import { StatusContext } from "./StatusProvider"
 import "./Animal.css"
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import Form from 'react-bootstrap/Form'
 
 
 export const AnimalForm = () => {
-    const { animals, getAnimals, createAnimal, getAnimalById, updateAnimal } = useContext(AnimalContext)
+    const { getAnimals, createAnimal, getAnimalById, updateAnimal } = useContext(AnimalContext)
+    const { status, getStatus } = useContext(StatusContext)
 
+// useState( '1' ) is setting the intial value of radios to 1
+    const [radioValue] = useState( '1' ); 
 
+    /* defines radio buttons and gives them a value of true or false
+    if a animal is "Available" isAvailable === false
+    if a animal; is "Sold" isAvailable === true */
     const radios = [
 
-        { name: 'Good', value: true },
-        { name: 'Bad', value: false },
+        { name: 'Available', value: true },
+        { name: 'Sold', value: false },
     ];
 
 
@@ -24,7 +31,7 @@ export const AnimalForm = () => {
         url: "",
         type: "",
         breed: "",
-        status: ""
+        statusId: 0
     });
 
     const [isLoading, setIsLoading] = useState(true);
@@ -83,7 +90,7 @@ existing record of an review.
                 url: animal.url,
                 type: animal.type,
                 breed: animal.breed,
-                status: animal.status
+                statusId: parseInt(animal.statusId)
             })
 
             .then(() => history.push(`/aniamls/detail/${animal.id}`))
@@ -96,7 +103,7 @@ existing record of an review.
                 url: animal.url,
                 type: animal.type,
                 breed: animal.breed,
-                status: animal.status
+                statusId: parseInt(animal.statusId)
             })
 
             .then(() => history.push("/aniamls"))
@@ -105,7 +112,7 @@ existing record of an review.
 
         // Get animals. If animalId is in the URL, getFoodById
     useEffect(() => {
-        getAnimals().then(() => {
+        getAnimals().then(getStatus).then(() => {
             // if there is data
         if (animalId) {
             getAnimalById(animalId)
@@ -121,40 +128,23 @@ existing record of an review.
     }, [])
 
         return (
-        <Form className="animalForm">
+        <div className="animalForm">   
+        <Form>
             <h2 className="animalFormTitle">{animalId ? "Edit Animal" : "Add New Animal"}</h2>
-                        {/* dropdown to select a Type of Meal */}
-            {/* <fieldset>
+                        {/* dropdown to select Avaibility Status */}
+            <fieldset>
                 <div className="form-group">
-                <label htmlFor="meal">Type of Meal: </label>
-                <select value={food.mealTypeId} id="mealTypeId" className="form-control" onChange={handleControlledInputChange}>
-                    <option value="0">Select a meal type</option>
-                    {meals.map(meal => (
-                    <option key={meal.id} value={meal.id}>
-                        {meal.name}
+                <label htmlFor="status">Status of Animal: </label>
+                <select value={animal.statusId} id="statusId" className="form-control" onChange={handleControlledInputChange}>
+                    <option value="0">Select animal status</option>
+                    {status.map(status => (
+                    <option key={status.id} value={status.id}>
+                        {status.name}
                     </option>
                     ))}
                 </select>
                 </div>
-            </fieldset> */}
-            {/* <fieldset>
-                <ButtonGroup toggle>
-                    {radios.map((radio, idx) => (
-                    <ToggleButton
-                        id="isGood"
-                        key={idx}
-                        type="radio"
-                        variant="secondary"
-                        name="isGood"
-                        value={radio.value}
-                        checked={radioValue === radio.value}
-                        onChange={handleControlledInputChange}
-                    >
-                        {radio.name}
-                    </ToggleButton>
-                    ))}
-                </ButtonGroup>
-            </fieldset> */}
+            </fieldset>
             <fieldset>
                 <div className="animal__name">
                     <label htmlFor="name">Name:</label>
@@ -164,7 +154,7 @@ existing record of an review.
             {/* input for picture url */}
             <fieldset>
                 <div className="animal__url">
-                    <label htmlFor="url">Link:</label>
+                    <label htmlFor="url">Image:</label>
                     <input type="url" id="url" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="https://example.com" pattern="https://.*" value={animal.url}/>
                 </div>
             </fieldset>
@@ -180,12 +170,33 @@ existing record of an review.
                     <input type="text" id="breed" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Animal Breed" value={animal.breed}/>
                 </div>
             </fieldset>
-            <fieldset>
+            {/* <fieldset>
                 <div className="animal__status">
                     <label htmlFor="status">Status:</label>
                     <input type="text" id="status" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Animal Status" value={animal.status}/>
                 </div>
-            </fieldset>
+            </fieldset> */}
+            <br />
+            {/* <fieldset>
+                <ButtonGroup toggle>
+                    {radios.map((radio, idx) => (
+                    <ToggleButton
+                        id="isAvailable"
+                        key={idx}
+                        type="radio"
+                        variant="secondary"
+                        name="isAvailable"
+                        value={radio.value}
+                        checked={radioValue === radio.value}
+                        onChange={handleControlledInputChange}
+                    >
+                        {radio.name}
+                    </ToggleButton>
+                    ))}
+                </ButtonGroup>
+            </fieldset> */}
+            <br />
+            <div className="d-flex justify-content-center">
             <button className="btn btn-primary"
                 disabled={isLoading}
 
@@ -196,6 +207,8 @@ existing record of an review.
                 }}>
                 {animalId ? "Save Animal" : "Add Animal"}
             </button>
+            </div>
         </Form>
+        </div> 
     )
 }

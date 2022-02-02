@@ -1,14 +1,15 @@
 // import the main React library, and two functions that it exports.
-import React, { useState, createContext } from "react"
+import React, { useState } from "react"
 
 
-export const StatusContext = createContext()
-
+export const StatusContext = React.createContext()
 
 
 export const StatusProvider = (props) => {
 
     const [status, setStatus] = useState([])
+    const [ searchTerms, setSearchTerms ] = useState("")
+
 
     const getStatus = () => {
 
@@ -21,7 +22,7 @@ export const StatusProvider = (props) => {
 
     <StatusContext.Provider value={{
     // these are the child components of MealContext.Provider
-    status, getStatus
+    status, getStatus, searchTerms, setSearchTerms
     }}>
         {props.children}
         </StatusContext.Provider>

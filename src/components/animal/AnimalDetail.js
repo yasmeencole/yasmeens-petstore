@@ -4,21 +4,22 @@ import "./Animal.css"
 import { useParams, useHistory } from "react-router-dom"
 import Button from 'react-bootstrap/Button';
 import Card from "react-bootstrap/Card";
-
+// import { StatusContext } from "./StatusProvider";
 
 
 export const AnimalDetail = () => {
 
     const { getAnimalById, deleteAnimal } = useContext(AnimalContext)
+    // const { status, getStatus } = useContext(StatusContext)
 
     const [animal, setAnimals] = useState({})
-
+    
 
     const {animalId} = useParams();
 
-
     const history = useHistory();
 
+    
     useEffect(() => {
         console.log("useEffect", animal)
         getAnimalById(animalId)
@@ -38,7 +39,7 @@ export const AnimalDetail = () => {
 
     
     return (
-
+        <div className="d-flex justify-content-center">
         <Card className="animalCard" style={{ width: '20rem' }}>
             <Card.Img variant="top" src={animal.url} />
             <Card.Body>
@@ -59,7 +60,10 @@ export const AnimalDetail = () => {
                 Breed: {animal.breed}
                 <br />
                 <br />
-                Status: {animal.status}
+                Status: {animal.status?.name}
+                {/* <Button> */}
+
+                {/* </Button> */}
                 <br />
                 <br />
 
@@ -69,7 +73,7 @@ export const AnimalDetail = () => {
             {/* </Card> */}
 
                 {/* {parseInt(sessionStorage.getItem("app_user_id")) === animal.userId ? */}
-                <div>
+                <div className="d-flex justify-content-center">
                 {/* this is the edit button, when clicked it sends a put request that updates the animal */}
                 <Button className="animalEditButton" onClick={() => { history.push(`/animals/edit/${animal.id}`) }}>Edit</Button>
                 
@@ -77,5 +81,6 @@ export const AnimalDetail = () => {
                 </div>
                         {/* : ""} */}
         </Card>
+        </div>
     )
 }

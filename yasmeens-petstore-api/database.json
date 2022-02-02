@@ -5,24 +5,50 @@
       "name": "Maya",
       "url": "https://images.unsplash.com/photo-1605244863941-3a3ed921c60d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cG9vZGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
       "type": "Dog",
-      "status": "Available",
-      "breed": "Poodle"
+      "breed": "Poodle",
+      "statusId": 1
     },
     {
       "id": 2,
       "name": "LuLu",
       "url": "https://media.istockphoto.com/photos/purebred-german-shepherd-puppy-lies-on-the-sidewalk-against-a-wooden-picture-id1358309706?b=1&k=20&m=1358309706&s=170667a&w=0&h=Od8h2xqYTRzjokH8ys8mgrAv_ueMbLbHPvFKdNiqDYM=",
       "type": "Dog",
-      "status": "Available",
-      "breed": "German Shepherd"
+      "breed": "German Shepherd",
+      "statusId": 1
     },
     {
       "id": 3,
       "name": "Evan",
       "url": "https://images.unsplash.com/photo-1535909339361-ef56e179d637?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHVnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
       "type": "Dog",
-      "status": "Available",
-      "breed": "Pug"
+      "breed": "Pug",
+      "statusId": 2
+    },
+    {
+      "id": 4,
+      "name": "Titan",
+      "url": "https://images.unsplash.com/photo-1529158299404-547993c51cc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Ym94ZXIlMjBwdXBweXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
+      "type": "Dog",
+      "breed": "Boxer",
+      "statusId": 2
+    },
+    {
+      "id": 5,
+      "name": "May",
+      "url": "https://media.istockphoto.com/photos/beautiful-young-white-purebred-ragdoll-cat-with-blue-eyes-picture-id1304538926?b=1&k=20&m=1304538926&s=170667a&w=0&h=UJUqDJ0Fy4QeK_LIRkhX0cMFIIeaNvrE9lriMqGmqnE=",
+      "type": "Cat",
+      "breed": "Ragdoll",
+      "statusId": 1
+    }
+  ],
+  "status": [
+    {
+      "id": 1,
+      "name": "Available"
+    },
+    {
+      "id": 2,
+      "name": "Sold"
     }
   ]
 }

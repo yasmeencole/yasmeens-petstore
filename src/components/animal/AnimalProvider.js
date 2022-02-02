@@ -6,15 +6,16 @@ export const AnimalContext = React.createContext()
 // This component establishes what data can be used.
 export const AnimalProvider = (props) => {
     const [animals, setAnimals] = useState([])
+    const [ searchTerms, setSearchTerms ] = useState("")
 
     const getAnimals = () => {
-        return fetch("https://petstore.swagger.io/v2/pet")
+        return fetch("http://localhost:8088/animals?_embed=status")
         .then(response => response.json())
         .then(setAnimals)
     }
 
     const createAnimal = (animalObj) => {
-        return fetch("http://localhost:8088/animals", {
+        return fetch("http://localhost:8088/animals?_embed=status", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -25,7 +26,7 @@ export const AnimalProvider = (props) => {
     }
 
     const getAnimalById = (id) => {
-        return fetch(`http://localhost:8088/animals/${id}`)
+        return fetch(`http://localhost:8088/animals/${id}?_embed=status`)
             .then(response => response.json())
     }
 
@@ -55,7 +56,7 @@ export const AnimalProvider = (props) => {
     */
     return (
         <AnimalContext.Provider value={{
-            animals, getAnimals, createAnimal, getAnimalById, deleteAnimal, updateAnimal
+            animals, getAnimals, createAnimal, getAnimalById, deleteAnimal, updateAnimal, searchTerms, setSearchTerms
         }}>
             {props.children}
         </AnimalContext.Provider>
