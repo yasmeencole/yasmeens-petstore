@@ -1,4 +1,4 @@
-import React, { useContext, useEffect }  from "react"
+import React, { useContext, useEffect, useState }  from "react"
 import { AnimalContext } from "./AnimalProvider" 
 import "./Animal"
 import { Animal } from "./Animal"
@@ -7,7 +7,9 @@ import { Animal } from "./Animal"
 export const SoldAnimal = () =>{
 
     // useContext() - Used by UI components that need data stored in the context, and exposed by the provider component.
-    const { animals, getAnimals } = useContext(AnimalContext)
+    const { animals, getAnimals, searchTerms } = useContext(AnimalContext)
+
+    const [ filteredAnimals, setFiltered ] = useState([])
 
     // they can affect other components and can’t be done during rendering
 
@@ -16,7 +18,18 @@ export const SoldAnimal = () =>{
         console.log(animals, "animal")
     }, [])
 
-
+      // useEffect dependency array with dependencies - will run if dependency changes (state)
+      // searchTerms will cause a change
+    useEffect(() => {
+        if (searchTerms !== "") {
+        // If the search field is not blank, display matching animals
+        const subset = animals.filter(animal => animal.name.toLowerCase().includes(searchTerms))
+        setFiltered(subset)
+        } else {
+        // If the search field is blank, display all animals
+        setFiltered(animals)
+        }
+    }, [searchTerms, animals])
 
 return (
 <>
@@ -26,14 +39,13 @@ return (
     <div className="animals">
     {
         /* .map() is a method that calls a provided call back function once for each element in the array in order to construct 
-        a new array from the results. 
-        
-        each time the callback excutes the returned value us executed 
+        a new array from the results. Each time the callback excutes the returned value is executed.
         */
-        // maps through list of foods and determines if the food is bad. If the food.isGood is === to False
-        //  then the food is considered bad and it will send a copy of the food to the bad foods component.
 
-        animals.map(animal => {
+        /* maps through list of animals and determines if the animal is avaiable or sold. If the statusId === 2(if the statusId is equal
+        to 2) the animal has been sold and a copy of the animal will be sent to the sold animals component. */
+
+        filteredAnimals.map(animal => {
             if (animal.statusId === 2)
         return <Animal key={animal.id} animal={animal} />
     })

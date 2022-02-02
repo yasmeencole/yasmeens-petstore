@@ -39,6 +39,14 @@
       "type": "Cat",
       "breed": "Ragdoll",
       "statusId": 1
+    },
+    {
+      "id": 6,
+      "name": "Sylvester",
+      "url": "https://media.istockphoto.com/photos/relaxed-black-and-white-tuxedo-cat-on-a-bed-picture-id1139565194?b=1&k=20&m=1139565194&s=170667a&w=0&h=H96gcNdjQPEQj_3Z_Y_5CoKXiASs-TJy5oJVWH7reoM=",
+      "type": "Cat",
+      "breed": "Tuxedo",
+      "statusId": 2
     }
   ],
   "status": [

@@ -14,7 +14,7 @@ export const AnimalSearch = () => {
         <div className="d-flex justify-content-center" style={{alignItems: 'center', marginBottom: '20px'}}>
 
         <input className="animalSearch" type="text" style={{border: '1px solid lightgray', borderRadius: '30px', 
-            width: '40vh', height: '35px', marginLeft: '10px', marginTop: '10px',  paddingLeft: '20px', color: '#4E8B96'}}
+            width: '40vh', height: '35px', marginLeft: '10px', marginTop: '10px',  paddingLeft: '20px'}}
             onKeyUp={(event) => setSearchTerms(event.target.value)}
             placeholder="Search... " />
         </div>
