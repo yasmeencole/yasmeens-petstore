@@ -3,26 +3,12 @@ import { AnimalContext } from "./AnimalProvider"
 import { StatusContext } from "./StatusProvider"
 import "./Animal.css"
 import { useParams, useHistory } from 'react-router-dom'
-import ButtonGroup from 'react-bootstrap/ButtonGroup'
-import ToggleButton from 'react-bootstrap/ToggleButton'
 import Form from 'react-bootstrap/Form'
 
 
 export const AnimalForm = () => {
     const { getAnimals, createAnimal, getAnimalById, updateAnimal } = useContext(AnimalContext)
     const { status, getStatus } = useContext(StatusContext)
-
-// useState( '1' ) is setting the intial value of radios to 1
-    const [radioValue] = useState( '1' ); 
-
-    /* defines radio buttons and gives them a value of true or false
-    if a animal is "Available" isAvailable === false
-    if a animal; is "Sold" isAvailable === true */
-    const radios = [
-
-        { name: 'Available', value: true },
-        { name: 'Sold', value: false },
-    ];
 
 
     const [animal, setAnimals] = useState({
@@ -66,16 +52,13 @@ converted to a boolean of true and false.
             }
             else {
                 newAnimal[event.target.name] = false
-
             }
-
         }
         // update state
         setAnimals(newAnimal)
     }
 
     const handleClickSaveAnimal = () => {
-
         setIsLoading(true);
 
 /* This is how we check for whether the form is being used for editing or creating. 
@@ -170,31 +153,6 @@ existing record of an review.
                     <input type="text" id="breed" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Animal Breed" value={animal.breed}/>
                 </div>
             </fieldset>
-            {/* <fieldset>
-                <div className="animal__status">
-                    <label htmlFor="status">Status:</label>
-                    <input type="text" id="status" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Animal Status" value={animal.status}/>
-                </div>
-            </fieldset> */}
-            <br />
-            {/* <fieldset>
-                <ButtonGroup toggle>
-                    {radios.map((radio, idx) => (
-                    <ToggleButton
-                        id="isAvailable"
-                        key={idx}
-                        type="radio"
-                        variant="secondary"
-                        name="isAvailable"
-                        value={radio.value}
-                        checked={radioValue === radio.value}
-                        onChange={handleControlledInputChange}
-                    >
-                        {radio.name}
-                    </ToggleButton>
-                    ))}
-                </ButtonGroup>
-            </fieldset> */}
             <br />
             <div className="d-flex justify-content-center">
             <button className="btn btn-primary"

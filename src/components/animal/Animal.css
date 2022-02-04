@@ -8,9 +8,10 @@
     text-decoration: none !important;
     font-family: "Patua One", serif;
     border-radius: 0px !important;
-    max-height: 200px !important;
-    min-height: 200px;
+    max-height: 225px !important;
+    min-height: 225px;
     min-width: 18rem;
+    /* object-fit: contain; */
 
 }
 
@@ -45,12 +46,16 @@
     margin-top: 15px;
 }
 
-.animalEditButton, .animalDeleteButton, .btn, .btn-primary {
+.animalEditButton, .animalDeleteButton, .btn, .btn-primary{
     background-color: #4E8B96;
     border: none;
     margin-right: 15px;
     align-items: center;
     justify-content: center;
+}
+
+.statusButton {
+    background-color: #FFD16E;
 }
 
 .createAnimalButtom {
@@ -66,18 +71,17 @@
     width: 100%; /*Add this*/
 }
 .animalForm {
-    /* border: 10px solid #FAFCBD; */
-    /* display:inline-block; */
+
     justify-content: center;
     margin: 50px 75px 75px 75px;
     padding: 10px 25px 10px 25px;
     background-color: #B5DB8A;
 }
 
-/* body {
-    background-color: #4E8B96;
-} */
-
 .btn-primary:hover {
-    background-color: #B5DB8A;
+    background-color: #bfe692;
+}
+
+input.animalSearch {
+    outline-color: #B5DB8A;
 }

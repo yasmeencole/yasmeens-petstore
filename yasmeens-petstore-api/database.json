@@ -55,6 +55,22 @@
       "type": "Dog",
       "breed": "Yorkie",
       "statusId": 1
+    },
+    {
+      "id": 8,
+      "name": "Terry",
+      "url": "https://images.unsplash.com/photo-1583860200437-60e3649be4e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHlvcmtpZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
+      "type": "Dog",
+      "breed": "Yorkie",
+      "statusId": 2
+    },
+    {
+      "id": 9,
+      "name": "Taz",
+      "url": "https://images.unsplash.com/photo-1475954704693-ac6850a71ee0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGl0YnVsbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
+      "type": "Dog",
+      "breed": "Pitbull",
+      "statusId": 2
     }
   ],
   "status": [

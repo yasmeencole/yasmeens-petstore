@@ -9,13 +9,13 @@ export const AnimalProvider = (props) => {
     const [ searchTerms, setSearchTerms ] = useState("")
 
     const getAnimals = () => {
-        return fetch("http://localhost:8088/animals?_expand=status")
+        return fetch("http://localhost:8088/animals")
         .then(response => response.json())
         .then(setAnimals)
     }
 
     const createAnimal = (animalObj) => {
-        return fetch("http://localhost:8088/animals?_embed=status", {
+        return fetch("http://localhost:8088/animals", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -26,7 +26,7 @@ export const AnimalProvider = (props) => {
     }
 
     const getAnimalById = (id) => {
-        return fetch(`http://localhost:8088/animals/${id}?_expand=status`)
+        return fetch(`http://localhost:8088/animals/${id}`)
             .then(response => response.json())
     }
 

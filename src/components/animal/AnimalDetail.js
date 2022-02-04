@@ -4,50 +4,32 @@ import "./Animal.css"
 import { useParams, useHistory } from "react-router-dom"
 import Button from 'react-bootstrap/Button';
 import Card from "react-bootstrap/Card";
-// import { StatusContext } from "./StatusProvider";
+import { StatusContext } from "./StatusProvider";
 
 
 export const AnimalDetail = () => {
 
-    const { getAnimals, getAnimalById, deleteAnimal } = useContext(AnimalContext)
-    // const { status, getStatus } = useContext(StatusContext)
+    const { getAnimalById, deleteAnimal } = useContext(AnimalContext)
+    const { status, getStatus } = useContext(StatusContext)
 
-    // const [status, setStatus] = useState({})
     const [animal, setAnimals] = useState({})
-    
 
     const {animalId} = useParams();
 
     const history = useHistory();
-    // const [isLoading, setIsLoading] = useState(true);
 
-    
-
-
-    // useEffect(() => {
-    //     getAnimals().then(getStatus).then(() => {
-    //         // if there is data
-    //     if (animalId) {
-    //         getAnimalById(animalId)
-    //         .then(animal => {
-    //             setAnimals(animal)
-    //             setIsLoading(false)
-    //         })
-    //     } else {
-    //         // else - there is no data
-    //         setIsLoading(false)
-    //     }
-    //     })
-    // }, [])
 
     useEffect(() => {
-        console.log("useEffect", animal)
-        getAnimalById(animalId)
-        .then((response) => {
-            setAnimals(response)
-        })
+        getStatus().then(
+            console.log("useEffect", animal),
+            getAnimalById(animalId)
+            .then((response) => {
+                setAnimals(response)
+                console.log(response)
+                console.log(status)
+            })
+        )
     }, [])
-
 
 
     //handles the delete button on the animal details. handleRelease gets the animal by id then deletes it.
@@ -57,9 +39,6 @@ export const AnimalDetail = () => {
             history.push("/animals")
         })
     }
-
-    // const statusFinder = (id) => {
-    //     return animal.statusId == status.id; )}
 
     
     return (
@@ -84,18 +63,15 @@ export const AnimalDetail = () => {
                 <br />
                 <br />
 
-                <b>Status:</b> {animal.status?.name}
-                {/* {status.find(name => animal.statusId === name )} */}
-                {/* <Button> */}
-
-                {/* </Button> */}
+                <Button className="statusButton">
+                {status[animal.statusId - 1]?.name}
+                </Button>
                 <br />
                 <br />
 
                 </Card.Text>
 
             </Card.Body>
-            {/* </Card> */}
 
                 <div className="d-flex justify-content-center">
                 {/* this is the edit button, when clicked it sends a put request that updates the animal */}
@@ -103,7 +79,7 @@ export const AnimalDetail = () => {
                 
                 <Button className="animalDeleteButton" onClick={handleRelease}>Delete</Button>
                 </div>
-                        {/* : ""} */}
+
         </Card>
         </div>
     )
