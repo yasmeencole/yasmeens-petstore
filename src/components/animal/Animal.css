@@ -8,10 +8,11 @@
     text-decoration: none !important;
     font-family: "Patua One", serif;
     border-radius: 0px !important;
-    max-height: 225px !important;
-    min-height: 225px;
+    max-height: 250px !important;
+    min-height: 250px;
     min-width: 18rem;
-    /* object-fit: contain; */
+    object-fit: cover;
+    object-position: right top;
 
 }
 
