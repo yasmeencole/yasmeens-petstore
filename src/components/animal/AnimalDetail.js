@@ -9,17 +9,37 @@ import Card from "react-bootstrap/Card";
 
 export const AnimalDetail = () => {
 
-    const { getAnimalById, deleteAnimal } = useContext(AnimalContext)
+    const { getAnimals, getAnimalById, deleteAnimal } = useContext(AnimalContext)
     // const { status, getStatus } = useContext(StatusContext)
 
+    // const [status, setStatus] = useState({})
     const [animal, setAnimals] = useState({})
     
 
     const {animalId} = useParams();
 
     const history = useHistory();
+    // const [isLoading, setIsLoading] = useState(true);
 
     
+
+
+    // useEffect(() => {
+    //     getAnimals().then(getStatus).then(() => {
+    //         // if there is data
+    //     if (animalId) {
+    //         getAnimalById(animalId)
+    //         .then(animal => {
+    //             setAnimals(animal)
+    //             setIsLoading(false)
+    //         })
+    //     } else {
+    //         // else - there is no data
+    //         setIsLoading(false)
+    //     }
+    //     })
+    // }, [])
+
     useEffect(() => {
         console.log("useEffect", animal)
         getAnimalById(animalId)
@@ -27,6 +47,7 @@ export const AnimalDetail = () => {
             setAnimals(response)
         })
     }, [])
+
 
 
     //handles the delete button on the animal details. handleRelease gets the animal by id then deletes it.
@@ -37,6 +58,9 @@ export const AnimalDetail = () => {
         })
     }
 
+    // const statusFinder = (id) => {
+    //     return animal.statusId == status.id; )}
+
     
     return (
         <div className="d-flex justify-content-center">
@@ -44,23 +68,24 @@ export const AnimalDetail = () => {
             <Card.Img variant="top" src={animal.url} />
             <Card.Body>
                 <Card.Title className="animalDetailsName">
-                    <h2>
-                    {animal.name}
-                    </h2>
+                    <h2>{animal.name}</h2>
                 </Card.Title>
 
                 <Card.Text>
-                About this animal:
+                <b>About this animal:</b>
                 <br />
                 <br />
 
-                Type: {animal.type}
+                <b>Type:</b> {animal.type}
                 <br />
                 <br />
-                Breed: {animal.breed}
+
+                <b>Breed:</b> {animal.breed}
                 <br />
                 <br />
-                Status: {animal.status?.name}
+
+                <b>Status:</b> {animal.status?.name}
+                {/* {status.find(name => animal.statusId === name )} */}
                 {/* <Button> */}
 
                 {/* </Button> */}
@@ -72,7 +97,6 @@ export const AnimalDetail = () => {
             </Card.Body>
             {/* </Card> */}
 
-                {/* {parseInt(sessionStorage.getItem("app_user_id")) === animal.userId ? */}
                 <div className="d-flex justify-content-center">
                 {/* this is the edit button, when clicked it sends a put request that updates the animal */}
                 <Button className="animalEditButton" onClick={() => { history.push(`/animals/edit/${animal.id}`) }}>Edit</Button>

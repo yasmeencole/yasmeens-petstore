@@ -93,7 +93,7 @@ existing record of an review.
                 statusId: parseInt(animal.statusId)
             })
 
-            .then(() => history.push(`/aniamls/detail/${animal.id}`))
+            .then(() => history.push(`/animals/detail/${animal.id}`))
 
         }else {
             //POST - add
@@ -106,11 +106,11 @@ existing record of an review.
                 statusId: parseInt(animal.statusId)
             })
 
-            .then(() => history.push("/aniamls"))
+            .then(() => history.push("/animals"))
         }
     }
 
-        // Get animals. If animalId is in the URL, getFoodById
+        // Get animals. If animalId is in the URL, getAnimalById
     useEffect(() => {
         getAnimals().then(getStatus).then(() => {
             // if there is data

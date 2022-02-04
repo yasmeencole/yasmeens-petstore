@@ -60,10 +60,10 @@
 }
 
 .animalList__Title, h1, h2{
-    text-align:center;
-    display:inline-block;
-    position:relative;
-    width:100%; /*Add this*/
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    width: 100%; /*Add this*/
 }
 .animalForm {
     /* border: 10px solid #FAFCBD; */
@@ -80,8 +80,4 @@
 
 .btn-primary:hover {
     background-color: #B5DB8A;
-}
-
-.input:hover {
-    border-color: #B5DB8A;
 }

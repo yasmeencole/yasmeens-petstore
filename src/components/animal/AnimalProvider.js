@@ -9,7 +9,7 @@ export const AnimalProvider = (props) => {
     const [ searchTerms, setSearchTerms ] = useState("")
 
     const getAnimals = () => {
-        return fetch("http://localhost:8088/animals?_embed=status")
+        return fetch("http://localhost:8088/animals?_expand=status")
         .then(response => response.json())
         .then(setAnimals)
     }
@@ -26,7 +26,7 @@ export const AnimalProvider = (props) => {
     }
 
     const getAnimalById = (id) => {
-        return fetch(`http://localhost:8088/animals/${id}?_embed=status`)
+        return fetch(`http://localhost:8088/animals/${id}?_expand=status`)
             .then(response => response.json())
     }
 

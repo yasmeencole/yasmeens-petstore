@@ -6,7 +6,7 @@
       "url": "https://images.unsplash.com/photo-1605244863941-3a3ed921c60d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cG9vZGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
       "type": "Dog",
       "breed": "Poodle",
-      "statusId": 1
+      "statusId": 2
     },
     {
       "id": 2,
@@ -47,6 +47,14 @@
       "type": "Cat",
       "breed": "Tuxedo",
       "statusId": 2
+    },
+    {
+      "id": 7,
+      "name": "Mojo",
+      "url": "https://images.unsplash.com/photo-1595423488649-7083891000fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8eW9ya2llJTIwcHVwcHl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+      "type": "Dog",
+      "breed": "Yorkie",
+      "statusId": 1
     }
   ],
   "status": [
