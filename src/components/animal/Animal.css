@@ -47,7 +47,7 @@
     margin-top: 15px;
 }
 
-.animalEditButton, .animalDeleteButton, .btn, .btn-primary{
+.animalEditButton, .animalDeleteButton, .btn, .btn-primary, .createAnimalTableButtom{
     background-color: #4E8B96;
     border: none;
     margin-right: 15px;
@@ -85,4 +85,20 @@
 
 input.animalSearch {
     outline-color: #B5DB8A;
+}
+
+table {
+    border: 1px solid black;
+    width: 75%;
+    /* border-collapse: collapse; */
+    margin: 35px 75px 75px 12%;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 2px;
+}
+
+.table__header {
+    margin-top: 25px;
 }

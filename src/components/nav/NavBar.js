@@ -13,6 +13,7 @@ export const NavBar = (props) => {
             <Nav className="mr-auto" >
                 <Nav.Link className="nav__links" href="/animals">Animals</Nav.Link>
                 <Nav.Link className="nav__links" href="/soldAnimals">Sold Animals</Nav.Link>
+                <Nav.Link className="nav__links" href="/animalTable">Animal Table</Nav.Link>
             </Nav>
     </Navbar>
     )
