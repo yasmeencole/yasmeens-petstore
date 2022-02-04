@@ -1,10 +1,19 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { AnimalContext } from "./AnimalProvider"
 import { Animal } from "./Animal"
+import { useHistory } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+
+
 
 export const AnimalList = (props) => {
   // This state changes when `getPets()` is invoked below
-    const { animals, getAnimals } = useContext(AnimalContext)
+    const { animals, getAnimals, searchTerms } = useContext(AnimalContext)
+
+    const [ filteredAnimals, setFiltered ] = useState([])
+
+    const history = useHistory()
+
 
     //useEffect - reach out to the world for something
     useEffect(() => {
@@ -12,38 +21,34 @@ export const AnimalList = (props) => {
         getAnimals()
     }, [])
 
+      // useEffect dependency array with dependencies - will run if dependency changes (state)
+      // searchTerms will cause a change
+    useEffect(() => {
+        if (searchTerms !== "") {
+        // If the search field is not blank, display matching animals
+        const subset = animals.filter(animal => animal.name.toLowerCase().includes(searchTerms))
+        setFiltered(subset)
+        } else {
+        // If the search field is blank, display all animals
+        setFiltered(animals)
+        }
+    }, [searchTerms, animals])
 
     return (
         <>
-            <header className="animals__header">
+            {/* <header className="animals__header">
                 <h1>Animals</h1>
-            </header>
-            {/* <div className="pets">
-                {
-                pets.map(pet => {
-                    console.log({pets})
-                    return (
-                    <div className="pet" id={`pet--${pet.id}`}>
-                        <div className="pet__name">
-                        Name: { pet.name }
-                        </div>
-                        <div className="pet__breed">
-                        Breed: { pet.breed }
-                        </div>
-                    </div>
-                    )
-                })
-            }
-            </div> */}
+            </header> */}
         <div className="animal_list">
-            {/* <h1>My Animals</h1>
+            <h1 className="animalList__Title">The Petstore's Animals</h1>
 
-            <button onClick={() => history.push("/animals/create")}>
-                Add Animal
-            </button> */}
+            <div className="d-flex justify-content-center">
+
+            <Button className="createAnimalButtom" onClick={() => history.push("/animals/create")}>New Animal</Button>
+            </div>
 
             <div className="animals">
-                {animals.map(animal => {
+                {filteredAnimals.map(animal => {
                     return <Animal key={animal.id} animal={animal} />
                 })}
             </div>

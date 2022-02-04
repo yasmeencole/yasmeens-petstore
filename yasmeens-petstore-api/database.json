@@ -1,7 +1,86 @@
 {
-    "animals": [
-        { "id": 1, "name": "Maya", "breed": "Poodle"},
-        { "id": 2, "name": "LuLu", "breed": "German Shepherd" },
-        { "id": 3, "name": "Evan", "breed": "Pitbull" }
-    ]
+  "animals": [
+    {
+      "id": 1,
+      "name": "Maya",
+      "url": "https://images.unsplash.com/photo-1605244863941-3a3ed921c60d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cG9vZGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
+      "type": "Dog",
+      "breed": "Poodle",
+      "statusId": 2
+    },
+    {
+      "id": 2,
+      "name": "LuLu",
+      "url": "https://media.istockphoto.com/photos/purebred-german-shepherd-puppy-lies-on-the-sidewalk-against-a-wooden-picture-id1358309706?b=1&k=20&m=1358309706&s=170667a&w=0&h=Od8h2xqYTRzjokH8ys8mgrAv_ueMbLbHPvFKdNiqDYM=",
+      "type": "Dog",
+      "breed": "German Shepherd",
+      "statusId": 1
+    },
+    {
+      "id": 3,
+      "name": "Evan",
+      "url": "https://images.unsplash.com/photo-1535909339361-ef56e179d637?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHVnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
+      "type": "Dog",
+      "breed": "Pug",
+      "statusId": 2
+    },
+    {
+      "id": 4,
+      "name": "Titan",
+      "url": "https://images.unsplash.com/photo-1529158299404-547993c51cc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Ym94ZXIlMjBwdXBweXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
+      "type": "Dog",
+      "breed": "Boxer",
+      "statusId": 2
+    },
+    {
+      "id": 5,
+      "name": "May",
+      "url": "https://media.istockphoto.com/photos/beautiful-young-white-purebred-ragdoll-cat-with-blue-eyes-picture-id1304538926?b=1&k=20&m=1304538926&s=170667a&w=0&h=UJUqDJ0Fy4QeK_LIRkhX0cMFIIeaNvrE9lriMqGmqnE=",
+      "type": "Cat",
+      "breed": "Ragdoll",
+      "statusId": 1
+    },
+    {
+      "id": 6,
+      "name": "Sylvester",
+      "url": "https://media.istockphoto.com/photos/relaxed-black-and-white-tuxedo-cat-on-a-bed-picture-id1139565194?b=1&k=20&m=1139565194&s=170667a&w=0&h=H96gcNdjQPEQj_3Z_Y_5CoKXiASs-TJy5oJVWH7reoM=",
+      "type": "Cat",
+      "breed": "Tuxedo",
+      "statusId": 2
+    },
+    {
+      "id": 7,
+      "name": "Mojo",
+      "url": "https://images.unsplash.com/photo-1595423488649-7083891000fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8eW9ya2llJTIwcHVwcHl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+      "type": "Dog",
+      "breed": "Yorkie",
+      "statusId": 1
+    },
+    {
+      "id": 8,
+      "name": "Terry",
+      "url": "https://images.unsplash.com/photo-1583860200437-60e3649be4e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHlvcmtpZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
+      "type": "Dog",
+      "breed": "Yorkie",
+      "statusId": 2
+    },
+    {
+      "id": 9,
+      "name": "Taz",
+      "url": "https://images.unsplash.com/photo-1475954704693-ac6850a71ee0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGl0YnVsbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
+      "type": "Dog",
+      "breed": "Pitbull",
+      "statusId": 2
+    }
+  ],
+  "status": [
+    {
+      "id": 1,
+      "name": "Available"
+    },
+    {
+      "id": 2,
+      "name": "Sold"
+    }
+  ]
 }

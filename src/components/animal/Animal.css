@@ -1,12 +1,87 @@
-.animals {
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+
+.animals, .card-img {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    text-align: center;
+    text-decoration: none !important;
+    font-family: "Patua One", serif;
+    border-radius: 0px !important;
+    max-height: 225px !important;
+    min-height: 225px;
+    min-width: 18rem;
+    /* object-fit: contain; */
+
 }
 
 .animal {
     flex-basis: 28%;
     margin: 1em;
     padding: 1em;
-    border: 1px solid goldenrod;
+    margin-left: 4px;
+    border: none !important;
+    border-radius: 0px !important;
+
+}
+
+.animalCardTitle, .card-text {
+    color: #404040;
+}
+
+.cardLink {
+    text-decoration: none !important;
+
+}
+
+.card-img, .card-img-top {
+    border-radius: 0px !important;
+
+}
+
+.animalCard {
+    border-radius: 0px !important;
+    border: none !important;
+    margin-left: 2px;
+    margin-top: 15px;
+}
+
+.animalEditButton, .animalDeleteButton, .btn, .btn-primary{
+    background-color: #4E8B96;
+    border: none;
+    margin-right: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.statusButton {
+    background-color: #FFD16E;
+}
+
+.createAnimalButtom {
+    background-color: #4E8B96;
+    border: none;
+
+}
+
+.animalList__Title, h1, h2{
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    width: 100%; /*Add this*/
+}
+.animalForm {
+
+    justify-content: center;
+    margin: 50px 75px 75px 75px;
+    padding: 10px 25px 10px 25px;
+    background-color: #B5DB8A;
+}
+
+.btn-primary:hover {
+    background-color: #bfe692;
+}
+
+input.animalSearch {
+    outline-color: #B5DB8A;
 }
