@@ -87,6 +87,14 @@
       "type": "Cat",
       "breed": "Tabby",
       "statusId": 1
+    },
+    {
+      "id": 12,
+      "name": "Lucy",
+      "url": "https://images.unsplash.com/photo-1552954877-e96a0f0728c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dGFiYnklMjBjYXR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+      "type": "Cat",
+      "breed": "Tabby",
+      "statusId": 1
     }
   ],
   "status": [
