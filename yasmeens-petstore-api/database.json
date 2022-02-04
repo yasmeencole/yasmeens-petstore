@@ -70,7 +70,23 @@
       "url": "https://images.unsplash.com/photo-1475954704693-ac6850a71ee0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGl0YnVsbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
       "type": "Dog",
       "breed": "Pitbull",
-      "statusId": 2
+      "statusId": 1
+    },
+    {
+      "id": 10,
+      "name": "Casey",
+      "url": "https://images.unsplash.com/photo-1605896192716-b886ff1ce901?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8c2lhbWVzZSUyMGNhdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
+      "type": "Cat",
+      "breed": "Siamese",
+      "statusId": 1
+    },
+    {
+      "id": 11,
+      "name": "Diamond",
+      "url": "https://images.unsplash.com/photo-1612126258173-85375840a9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8dGFiYnklMjBjYXR8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+      "type": "Cat",
+      "breed": "Tabby",
+      "statusId": 1
     }
   ],
   "status": [

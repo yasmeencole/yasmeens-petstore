@@ -25,8 +25,8 @@ export const AnimalDetail = () => {
             getAnimalById(animalId)
             .then((response) => {
                 setAnimals(response)
-                console.log(response)
-                console.log(status)
+                // console.log(response)
+                // console.log(status)
             })
         )
     }, [])
