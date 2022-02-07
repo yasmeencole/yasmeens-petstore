@@ -10,7 +10,7 @@ export const AnimalForm = () => {
     const { getAnimals, createAnimal, getAnimalById, updateAnimal } = useContext(AnimalContext)
     const { status, getStatus } = useContext(StatusContext)
 
-
+    // Here the inital state of the form inputs are define with the useState() hook
     const [animal, setAnimals] = useState({
         id: "",
         name: "",
@@ -20,22 +20,41 @@ export const AnimalForm = () => {
         statusId: 0
     });
 
+    //wait for data before button is active. Look at the button to see how it's setting itself to disabled or not based on this state
     const [isLoading, setIsLoading] = useState(true);
+    
+    // The form can be used for editing and adding an animal, you need access to the animal id for fetching the animal you want to edit
+    // useParams from react-router-dom allowing the app to read a parameter from the URL.
+    // this will serve as a variable to hold the actual value that will be in the URL
     const { animalId } = useParams();
 
+    // useHistory() tells React to render the animal form component.
     const history = useHistory();
 
 
-// Reach out to the world and get animals state on initialization
-
+// Reach out to the API and get animals state on initialization
     useEffect(() => {
         getAnimals()
     }, [])
 
-// handleControlledInputChange is responsible for changing the event
+    //when field changes, update state. This causes a re-render and updates the view.
+    //Controlled component
+    // handleControlledInputChange is responsible for changing the event
     const handleControlledInputChange = (event) => {
+        /* When changing a state object or array, always create a copy, make changes, and then set state.
+        
+        The spread syntax (...) allows an iterable such as an array expression or string to be expanded in 
+        places where zero or more arguments (for function calls) or elements (for array literals) are 
+        expected, or an object expression to be expanded in places where zero or more key-value pairs
+        (for object literals) are expected.
 
+        Spread syntax can be used when all elements from an object or array meeds to be included in a list of some kind
+
+        ... = function passes all the values in the array
+        animal =  is the array name
+        */
         const newAnimal = { ...animal }
+        // ...animal is a copy of const [animal, setAnimals] = useState({})
 
 
 // this tells the button to grab the id of the new animal that has been created
@@ -60,10 +79,11 @@ converted to a boolean of true and false.
 
     const handleClickSaveAnimal = () => {
         setIsLoading(true);
+        // setIsLoading(true) - ensures the user cannot repeatedly click the button while the API is being updated.
 
 /* This is how we check for whether the form is being used for editing or creating. 
 If the URL that got us here has an id number in it, we know we want to update an 
-existing record of an review. 
+existing record of an animal. 
 */
         if (animalId){
             //PUT - update
@@ -93,7 +113,7 @@ existing record of an review.
         }
     }
 
-        // Get animals. If animalId is in the URL, getAnimalById
+        // Get animals and status. If animalId is in the URL, getAnimalById
     useEffect(() => {
         getAnimals().then(getStatus).then(() => {
             // if there is data
@@ -109,6 +129,8 @@ existing record of an review.
         }
         })
     }, [])
+    // Once the API has updated, change the view to display updated data
+    // This component will populate the input fields with the current values from the API. We will obtain all necessary values using a useEffect() hook.
 
         return (
         <div className="animalForm">   

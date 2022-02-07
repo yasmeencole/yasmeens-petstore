@@ -5,6 +5,10 @@ import {Petstore} from "./components/Petstore"
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from "react-router-dom";
 
+
+// <Router /> is the root component which gets imported from the React Router package. 
+// <Petstore /> child component of <Router />, which tells React I will be placing Routes in my Petstore component.
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>

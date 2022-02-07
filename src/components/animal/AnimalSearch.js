@@ -5,6 +5,9 @@ import "./Animal.css"
 
 export const AnimalSearch = () => {
     // useContext() - Used by UI components that need data stored in the context, and exposed by the provider component.
+    
+    /* this components responsibility is to capture the text from the user. 
+    As the user types, you must immediately update the searchTerms state variable in the parent component.*/
 
     const { setSearchTerms } = useContext(AnimalContext)
 
