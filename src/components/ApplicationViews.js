@@ -1,6 +1,5 @@
 import React from "react"
 import { Route } from "react-router-dom"
-// import { Animal } from "./animal/Animal"
 import { AnimalList } from "./animal/AnimalList"
 import { AnimalProvider } from "./animal/AnimalProvider"
 // import { Home } from "./Home"
@@ -11,19 +10,20 @@ import { SoldAnimal } from "./animal/SoldAnimal"
 import { AnimalSearch } from "./animal/AnimalSearch"
 import { AnimalTable } from "./animal/AnimalTable"
 
+// appviews defines how the application will respond when the URL matches each of those patterns. 
+// When a user clicks on one of the hyperlinks in the navigation bar, this code dictates which component should be rendered.
+
 export const ApplicationViews = () => {
     return (
         <>
-
-            {/* Render the animal list when http://localhost:3000/animals */}
+            {/* Render the animal list when http://localhost:8088/animals */}
             <StatusProvider>
                 <AnimalProvider>
-                    {/* Render the location list when http://localhost:3000/ */}
+                    {/* Render the location list when http://localhost:8088/ */}
                     <Route exact path="/">
                         {/* <Home /> */}
                         <AnimalSearch />
                         <AnimalList />
-
                     </Route>
                     <Route exact path="/animals">
                         <AnimalSearch />
@@ -47,11 +47,6 @@ export const ApplicationViews = () => {
                     </Route>
                 </AnimalProvider>
             </StatusProvider>
-
-            {/* <StatusProvider>
-                <AnimalProvider>
-                </AnimalProvider>
-            </StatusProvider> */}
         </>
     )
 }
